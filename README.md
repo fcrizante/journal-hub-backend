@@ -13,7 +13,7 @@ Uma API backend para um sistema simples de banca de jornal. Fornece endpoints RE
 ## Visão rápida
 Este repositório contém o backend para um sistema simples de banca de jornal — gerenciar conteúdo. Os endpoints REST são implementados usando Spring Boot (Java).
 
-## Tecnologias (exemplo)
+## Tecnologias
 - Linguagem: Java (25)
 - Framework: Spring Boot (REST, Spring Security, JPA)
 - Autenticação: JSON Web Tokens (JWT)
