@@ -1,17 +1,24 @@
 package com.fcrizante.journalhub.backend.Model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Usuario")
 public class Usuario {
-    private int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+
+    @Column(name = "nome")
     private String nome;
+
+    @Column(name = "email")
     private String email;
 
-    public Usuario() {}
-
-    public Usuario(int id, String nome, String email) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-    }
+    @Column(name = "tipo")
+    private Integer tipo;
 
     public String getNome() {
         return nome;
@@ -33,7 +40,9 @@ public class Usuario {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public void setId(Integer id) { this.id = id; }
+
+    public int getTipo() { return tipo; }
+
+    public void setTipo(int tipo) { this.tipo = tipo; }
 }

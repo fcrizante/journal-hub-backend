@@ -1,23 +1,30 @@
 package com.fcrizante.journalhub.backend.Model;
 
-import java.math.BigDecimal;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "produto")
 public class Produto {
-    private int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+
+    @Column(name = "nome")
     private String nome;
-    private BigDecimal preco;
 
-    public Produto(int id, String nome, BigDecimal preco) {
-        this.id = id;
-        this.nome = nome;
-        this.preco = preco;
-    }
+    @Column(name = "codigo")
+    private String codigo;
 
-    public int getId() {
+    @Column(name = "tipo")
+    private Integer tipo;
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -29,11 +36,19 @@ public class Produto {
         this.nome = nome;
     }
 
-    public BigDecimal getPreco() {
-        return preco;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setPreco(BigDecimal preco) {
-        this.preco = preco;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public Integer getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Integer tipo) {
+        this.tipo = tipo;
     }
 }
